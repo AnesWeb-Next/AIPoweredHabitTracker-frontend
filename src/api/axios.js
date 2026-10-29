@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://aipoweredhabittracker-backend.onrender.com",
+  baseURL:
+    import.meta.env.VITE_API_URL ||
+    "https://aipoweredhabittracker-backend.onrender.com/api",
 });
 
 api.interceptors.request.use((config) => {
